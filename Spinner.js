@@ -1,0 +1,137 @@
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import Svg, {Path} from 'react-native-svg';
+
+const pathData = [
+  {
+    id: 0,
+    d: 'M14.5 2V7',
+  },
+  {
+    id: 1,
+    d: 'M19.8003 9.19985L23.3379 5.66235',
+  },
+  {
+    id: 2,
+    d: 'M22 14.5H27.0002',
+  },
+  {
+    id: 3,
+    d: 'M19.8003 19.8L23.3379 23.3375',
+  },
+  {
+    id: 4,
+    d: 'M14.5 22V27',
+  },
+  {
+    id: 5,
+    d: 'M5.6626 23.3375L9.20021 19.8',
+  },
+  {
+    id: 6,
+    d: 'M2 14.5H7.00016',
+  },
+  {
+    id: 7,
+    d: 'M5.6626 5.66235L9.20021 9.19985',
+  },
+];
+
+const Spinner = ({
+  visible = true,
+  mainTitle = '',
+  subTitle = '',
+  mainContainerStyle = styles.container,
+  mainTitleStyle = styles.mainTitle,
+  subTitleStyle = styles.subTitle,
+  color = '#787878',
+  width = 50,
+  height = 50,
+}) => {
+  const [count, setCount] = React.useState(-1);
+  const [last, setLast] = React.useState(-1);
+  const [secondLast, setSecondLast] = React.useState(-1);
+  const intervalId = React.useRef(null);
+
+  React.useEffect(() => {
+    const increment = () => {
+      setCount(prev => {
+        const value = prev + 1;
+        setPreceedingColors(value);
+        if (prev === 7) {
+          return 0;
+        } else {
+          return prev + 1;
+        }
+      });
+    };
+    intervalId.current = setInterval(increment, 100);
+    return () => {
+      clearInterval(intervalId.current);
+      setCount(-1);
+    };
+  }, []);
+
+  const setPreceedingColors = value => {
+    if (value === 0) {
+      setLast(7);
+      setSecondLast(6);
+    } else if (value === 1) {
+      setLast(0);
+      setSecondLast(7);
+    } else {
+      setLast(value - 1);
+      setSecondLast(value - 2);
+    }
+  };
+
+  return visible ? (
+    <View style={[styles.container, mainContainerStyle]}>
+      <Svg
+        width={width}
+        height={height}
+        preserveAspectRatio="none"
+        viewBox={'0 0 30 30'}>
+        {pathData.map((item, index) => {
+          return (
+            <Path
+              key={index}
+              d={item.d}
+              stroke={color}
+              strokeOpacity={
+                count === index
+                  ? 1
+                  : index === last
+                  ? 0.8
+                  : index === secondLast
+                  ? 0.6
+                  : 0.3
+              }
+              strokeWidth={3.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          );
+        })}
+      </Svg>
+      {mainTitle !== '' ? (
+        <Text style={mainTitleStyle}>{mainTitle}</Text>
+      ) : null}
+      {subTitle !== '' ? <Text style={subTitleStyle}>{subTitle}</Text> : null}
+    </View>
+  ) : null;
+};
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    paddingHorizontal: 30,
+    paddingVertical: 25,
+    backgroundColor: 'rgba(256,256,256,1)',
+    borderRadius: 10,
+  },
+  mainTitle: {fontSize: 20, paddingTop: 10},
+  subTitle: {paddingTop: 5, fontSize: 16},
+});
+
+export default Spinner;
