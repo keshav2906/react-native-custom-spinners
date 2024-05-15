@@ -1,6 +1,6 @@
 {
   "name": "react-native-custom-spinners",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Customised react native loading spinners",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "spinner"
   ],
   "author": "Keshav Nigam <keshavnigam080@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/keshav2906/react-native-custom-spinners/issues"
   },
