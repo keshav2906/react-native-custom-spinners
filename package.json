@@ -1,0 +1,32 @@
+{
+  "name": "react-native-custom-spinners",
+  "version": "0.0.1",
+  "description": "Customised react native loading spinners",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keshav2906/react-native-custom-spinners.git"
+  },
+  "keywords": [
+    "react-native-loading-indicator",
+    "activity",
+    "indicator",
+    "spinner",
+    "loading",
+    "spinner"
+  ],
+  "author": "Keshav Nigam <keshavnigam080@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keshav2906/react-native-custom-spinners/issues"
+  },
+  "homepage": "https://github.com/keshav2906/react-native-custom-spinners#readme",
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-native": "^0.74.1",
+    "react-native-svg": "^14.1.0"
+  }
+}
