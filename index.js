@@ -1,5 +1,5 @@
 import React from 'react';
-import Svg, {Path} from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
 const pathData = [
   {
@@ -36,15 +36,11 @@ const pathData = [
   },
 ];
 
-const Spinner = props => {
+export default Spinner = ({ visible = true, color = '#787878', width = 50, height = 50 }) => {
   const [count, setCount] = React.useState(-1);
   const [last, setLast] = React.useState(-1);
   const [secondLast, setSecondLast] = React.useState(-1);
   const intervalId = React.useRef(null);
-  const primaryColor = props.primaryColor;
-  const secondaryColor = props.secondaryColor;
-  const lastColor = props.lastColor;
-  const secondLastColor = props.secondLastColor;
 
   React.useEffect(() => {
     const increment = () => {
@@ -78,10 +74,10 @@ const Spinner = props => {
     }
   };
 
-  return props.visible ? (
+  return visible ? (
     <Svg
-      width={props.width ?? 50}
-      height={props.height ?? 50}
+      width={width}
+      height={height}
       preserveAspectRatio="none"
       viewBox={'0 0 30 30'}>
       {pathData.map((item, index) => {
@@ -90,14 +86,9 @@ const Spinner = props => {
             key={index}
             d={item.d}
             stroke={
-              count === index
-                ? primaryColor
-                : index === last
-                ? lastColor
-                : index === secondLast
-                ? secondLastColor
-                : secondaryColor
+              color
             }
+            strokeOpacity={count === index ? 1 : index === last ? 0.7 : index === secondLast ? 0.5 : 0.3}
             strokeWidth={3.5}
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -107,13 +98,3 @@ const Spinner = props => {
     </Svg>
   ) : null;
 };
-
-Spinner.defaultProps = {
-  visible: true,
-  primaryColor: 'rgba(120, 120, 120, 1)',
-  secondaryColor: 'rgba(120, 120, 120, 0.3)',
-  secondLastColor: 'rgba(120, 120, 120, 0.5)',
-  lastColor: 'rgba(120, 120, 120, 0.7)',
-};
-
-export default Spinner;
