@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/keshav2906/react-native-custom-spinners#readme",
   "peerDependencies": {
-    "react": "18.2.0",
-    "react-native": "^0.74.1",
-    "react-native-svg": "^14.1.0"
+    "react": ">=17.0.2",
+    "react-native": ">=0.60",
+    "react-native-svg": ">=14.1.0"
   }
 }

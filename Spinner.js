@@ -125,10 +125,6 @@ const Spinner = ({
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingHorizontal: 30,
-    paddingVertical: 25,
-    backgroundColor: 'rgba(256,256,256,1)',
-    borderRadius: 10,
   },
   mainTitle: {fontSize: 20, paddingTop: 10},
   subTitle: {paddingTop: 5, fontSize: 16},

@@ -1,15 +1,18 @@
 import React from 'react';
-import {StyleSheet, Modal, Animated, Dimensions} from 'react-native';
+import {View, StyleSheet, Modal, Dimensions} from 'react-native';
 
 const {width, height} = Dimensions.get('screen');
 
 const SpinnerOverlay = props => {
-  const {color} = props;
+  const {color, animationType} = props;
   return (
-    <Modal visible={props.visible} transparent>
-      <Animated.View style={[styles.container, {backgroundColor: color ?? '#005EA0CC'}]}>
+    <Modal
+      visible={props.visible}
+      transparent
+      animationType={animationType ?? 'fade'}>
+      <View style={[styles.container, {backgroundColor: color ?? '#005EA0CC'}]}>
         {props.children}
-      </Animated.View>
+      </View>
     </Modal>
   );
 };

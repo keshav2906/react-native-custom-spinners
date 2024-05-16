@@ -1,5 +1,7 @@
 import React from 'react';
-import {StyleSheet, Animated, Easing} from 'react-native';
+import {StyleSheet, Animated, Easing, Dimensions} from 'react-native';
+
+const {width, height} = Dimensions.get('screen');
 
 const BouncyView = props => {
   const [animatedValue] = React.useState(new Animated.Value(0));
@@ -34,8 +36,8 @@ const BouncyView = props => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 200,
-    height: 300,
+    width: width * 0.8,
+    height: height * 0.4,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
