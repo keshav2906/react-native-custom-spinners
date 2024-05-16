@@ -1,6 +1,6 @@
-import Spinner from "./Spinner";
-import SpinnerOverlay from "./SpinnerOverlay";
-import BouncyView from "./BouncyView";
+import Spinner from "./components/Spinner";
+import SpinnerOverlay from "./components/SpinnerOverlay";
+import BouncyView from "./components/BouncyView";
 
 export {
   Spinner,
