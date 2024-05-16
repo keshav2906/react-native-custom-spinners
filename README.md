@@ -2,6 +2,10 @@
 
 Customized React Native Loading Spinner like iOS. We are working on adding more customizable spinners in the future. Keep supporting.
 
+<p align="center">
+<img src="https://github.com/keshav2906/react-native-custom-spinners/blob/develop/BouncyView.gif" width="300"> <img src="https://github.com/keshav2906/react-native-custom-spinners/blob/develop/Spinner.gif" width="300">
+</p>
+
 ## Getting started
 Install the library using either Yarn:
 
@@ -40,11 +44,14 @@ import {Spinner, SpinnerOverlay, BouncyView} from "react-native-custom-spinners"
 Using Spinner Overlay:
 (Here animation type can be 'none', 'fade' or 'slide')
 
+
 ```javascript
 <SpinnerOverlay visible={true} animationType={'slide'}>
 {props.children}
 </SpinnerOverlay>
 ```
+
+Using Bouncy View:
 
 ```javascript
 <BouncyView
