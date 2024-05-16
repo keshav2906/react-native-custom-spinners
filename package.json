@@ -1,6 +1,6 @@
 {
   "name": "react-native-custom-spinners",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Customised react native loading spinners",
   "main": "index.js",
   "scripts": {
