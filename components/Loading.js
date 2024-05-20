@@ -52,7 +52,7 @@ const Loading = props => {
             {
               width: size ? size - size * 0.2 : 80,
               height: size ? size - size * 0.2 : 80,
-              borderRadius: size ? (size - size * 0.2) / 2 : 80,
+              borderRadius: size ? (size - size * 0.2) / 2 : 40,
               backgroundColor: innerColor ?? '#fff',
               shadowColor: '#fff',
               shadowOpacity: 1,
