@@ -3,7 +3,7 @@
 Customized React Native Loading Spinner like iOS. We are working on adding more customizable spinners in the future. Keep supporting.
 
 <p align="center">
-<img src="https://github.com/keshav2906/react-native-custom-spinners/blob/develop/BouncyView.gif" width="300"> <img src="https://github.com/keshav2906/react-native-custom-spinners/blob/develop/Spinner.gif" width="300">
+<img src="https://github.com/keshav2906/react-native-custom-spinners/blob/develop/Loading.gif" width="200"> <img src="https://github.com/keshav2906/react-native-custom-spinners/blob/develop/BouncyView.gif" width="200"> <img src="https://github.com/keshav2906/react-native-custom-spinners/blob/develop/Spinner.gif" width="200">
 </p>
 
 ## Getting started
@@ -23,7 +23,7 @@ npm install --save react-native-custom-spinners
 Import the library:
 
 ```javascript
-import {Spinner, SpinnerOverlay, BouncyView} from "react-native-custom-spinners";
+import {Spinner, SpinnerOverlay, BouncyView, Loading} from "react-native-custom-spinners";
 ```
 ```javascript
 <Spinner 
@@ -38,6 +38,15 @@ import {Spinner, SpinnerOverlay, BouncyView} from "react-native-custom-spinners"
     color = '#787878'
     width = {50}
     height = {50}
+/>
+```
+
+```javascript
+<Loading 
+    visible={true} // Default true
+    size={100} //Default 100. Max 200 allowed
+    color={ColorProp} //Default #FFFFFF
+    innerColor={ColorProp} //Default #FFFFFF
 />
 ```
 

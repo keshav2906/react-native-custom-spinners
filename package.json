@@ -1,7 +1,7 @@
 {
   "name": "react-native-custom-spinners",
-  "version": "0.0.8",
-  "description": "Customised react native loading spinners",
+  "version": "1.0.1",
+  "description": "Added new Loading component",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
